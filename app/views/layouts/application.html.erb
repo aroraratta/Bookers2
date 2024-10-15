@@ -16,10 +16,18 @@
       <%= link_to "Bookers", root_path %>
       <% if user_signed_in? %>
         <li>
-          <%= link_to "Home", users_show_path(current_user.id) %>
-          <%= link_to "Users", users_index_path %>
-          <%= link_to "Books", books_index_path %>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+          <%= link_to users_show_path(current_user.id) do %>
+            <i class="fa-solid fa-house"></i>Home
+          <% end %>
+          <%= link_to users_index_path do %>
+            <i class="fa-solid fa-users"></i>Users
+          <% end %>
+          <%= link_to books_index_path do %>
+            <i class="fa-solid fa-book-open"></i>Books
+          <% end %>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa-solid fa-right-from-bracket"></i>Log out
+          <% end %>
         </li>
       <% else %>
         <li>
@@ -30,12 +38,12 @@
         </li>
       <% end %>
     </header>
-    
+
     <%= yield %>
-    
+
     <footer>
       <p>CopyRight Infratop.inc</p>
     </footer>
-    
+
   </body>
 </html>

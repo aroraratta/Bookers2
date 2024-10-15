@@ -15,27 +15,51 @@
     <header>
       <%= link_to "Bookers", root_path %>
       <% if user_signed_in? %>
-        <li>
-          <%= link_to users_show_path(current_user.id) do %>
-            <i class="fa-solid fa-house"></i>Home
-          <% end %>
-          <%= link_to users_index_path do %>
-            <i class="fa-solid fa-users"></i>Users
-          <% end %>
-          <%= link_to books_index_path do %>
-            <i class="fa-solid fa-book-open"></i>Books
-          <% end %>
-          <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa-solid fa-right-from-bracket"></i>Log out
-          <% end %>
-        </li>
+        <ul class="list-unstyled">
+          <li class="list-unstyled">
+            <%= link_to users_show_path(current_user.id) do %>
+              <i class="fa-solid fa-house"></i>Home
+            <% end %>
+          </li>
+          <li class="list-unstyled">
+            <%= link_to users_index_path do %>
+              <i class="fa-solid fa-users"></i>Users
+            <% end %>
+          </li>
+          <li>
+            <%= link_to books_index_path do %>
+              <i class="fa-solid fa-book-open"></i>Books
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa-solid fa-right-from-bracket"></i>Log out
+            <% end %>
+          </li>
+        </ul>
       <% else %>
-        <li>
-          <%= link_to "Home", root_path %>
-          <%= link_to "About", homes_about_path %>
-          <%= link_to "Sign up", new_user_registration_path %>
-          <%= link_to "Log in", new_user_session_path %>
-        </li>
+        <ul>
+          <li>
+            <%= link_to root_path do %>
+              <i class="fa-solid fa-house"></i>Home
+            <% end %>
+          </li>
+          <li>
+            <%= link_to homes_about_path do %>
+              <i class="fa-solid fa-link"></i>Adout
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_registration_path do %>
+              <i class="fa-solid fa-user-plus"></i>Sign up
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_session_path do %>
+              <i class="fa-solid fa-right-from-bracket"></i>Log in
+            <% end %>
+          </li>
+        </ul>
       <% end %>
     </header>
 

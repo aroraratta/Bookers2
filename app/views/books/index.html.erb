@@ -1,2 +1,16 @@
 <%= render partial: 'users/userinfo', locals: { user: current_user, book: @book } %>
 
+<h2>Books</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Opinion</th>
+  </tr>
+  <tr>
+    <%= @books.each do |book| %>
+      <th><%= book.title %></th>
+      <th><%= book.body %></th>
+    <% end %>
+  </tr>
+</table>

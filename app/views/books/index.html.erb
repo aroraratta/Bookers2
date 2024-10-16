@@ -1,1 +1,2 @@
-<%= render 'users/userinfo', user: current_user %>
+<%= render partial: 'users/userinfo', locals: { user: current_user, book: @book } %>
+

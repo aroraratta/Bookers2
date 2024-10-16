@@ -1,2 +1,15 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<%= render partial: 'users/userinfo', locals: { user: current_user, book: Book.new } %>
+
+<h2>Books detail</h2>
+
+<table>
+  <tr>
+    <td>
+      <%= link_to user_path(@book.user.id) do %>
+        <%= image_tag @book.user.get_profile_image(100, 100) %>
+      <% end %>
+    </td>
+    <td><%= link_to @book.title, book_path(@book.id) %></td>
+    <td><%= @book.body %></td>
+  </tr>
+</table>

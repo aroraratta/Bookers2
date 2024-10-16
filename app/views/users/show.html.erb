@@ -1,3 +1,5 @@
+<%= flash[:notice] %>
+
 <%= render partial: 'users/userinfo', locals: { user: @user, book: Book.new } %>
 
 <h2>Books</h2>

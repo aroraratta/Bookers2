@@ -1,4 +1,11 @@
 <h2>User info</h2>
+  <div>
+    <% if user.image.attached? %>
+      <%= image_tag user.image, size: "200x200" %>
+    <% else %>
+      <%= image_tag  'no_image', size: "200x200" %>
+    <% end %>
+  </div>
 <table>
   <tr>
     <th>name</th>
@@ -8,3 +15,7 @@
     <th>introduction</th>
   </tr>
 </table>
+
+<%= link_to users_edit_path(user.id) do %>
+  <i class="fa-solid fa-user-gear"></i>
+<% end %>

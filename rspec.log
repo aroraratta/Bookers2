@@ -311,7 +311,7 @@ Failures:
      [31m  expected to find css ".container .row .col-md-3" but there were no matches[0m
      [36m# ./spec/system/03_finishing_touches_spec.rb:350:in `block (3 levels) in <main>'[0m
 
-Finished in 32.52 seconds (files took 0.89456 seconds to load)
+Finished in 33.61 seconds (files took 3.71 seconds to load)
 [31m201 examples, 4 failures[0m
 
 Failed examples:

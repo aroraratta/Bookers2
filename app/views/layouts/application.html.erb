@@ -46,23 +46,23 @@
                 </li>
               </ul>
             <% else %>
-              <ul>
-                <li class="list-unstyled">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-link text-light">
                   <%= link_to root_path do %>
                     <i class="fa-solid fa-house"></i>Home
                   <% end %>
                 </li>
-                <li class="list-unstyled">
+                <li class="nav-link text-light">
                   <%= link_to home_about_path do %>
                     <i class="fa-solid fa-link"></i>About
                   <% end %>
                 </li>
-                <li class="list-unstyled">
+                <li class="nav-link text-light">
                   <%= link_to new_user_registration_path do %>
                     <i class="fa-solid fa-user-plus"></i>Sign up
                   <% end %>
                 </li>
-                <li class="list-unstyled">
+                <li class="nav-link text-light">
                   <%= link_to new_user_session_path do %>
                     <i class="fa-solid fa-right-to-bracket"></i>Log in
                   <% end %>
@@ -79,7 +79,13 @@
     <%= yield %>
 
     <footer>
-      <p>CopyRight Infratop.inc</p>
+      <div class="container mt-5">
+        <div class="row">
+          <div class"mx-auto">
+            <p>CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
     </footer>
 
   </body>

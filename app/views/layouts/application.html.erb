@@ -13,9 +13,11 @@
 
   <body>
     <header>
-      <%= link_to "Bookers", root_path %>
       <% if user_signed_in? %>
-        <ul class="list-unstyled">
+        <ul>
+          <li>
+            <%= link_to "Bookers", root_path %>
+          </li>
           <li class="list-unstyled">
             <%= link_to user_path(current_user.id) do %>
               <i class="fa-solid fa-house"></i>Home
@@ -26,12 +28,12 @@
               <i class="fa-solid fa-users"></i>Users
             <% end %>
           </li>
-          <li>
+          <li class="list-unstyled">
             <%= link_to books_path do %>
               <i class="fa-solid fa-book-open"></i>Books
             <% end %>
           </li>
-          <li>
+          <li class="list-unstyled">
             <%= link_to destroy_user_session_path, method: :delete do %>
               <i class="fa-solid fa-right-from-bracket"></i>Log out
             <% end %>
@@ -39,22 +41,25 @@
         </ul>
       <% else %>
         <ul>
-          <li>
+          <li class="list-unstyled">
+            <%= link_to "Bookers", root_path %>
+          </li>
+          <li class="list-unstyled">
             <%= link_to root_path do %>
               <i class="fa-solid fa-house"></i>Home
             <% end %>
           </li>
-          <li>
+          <li class="list-unstyled">
             <%= link_to home_about_path do %>
-              <i class="fa-solid fa-link"></i>Adout
+              <i class="fa-solid fa-link"></i>About
             <% end %>
           </li>
-          <li>
+          <li class="list-unstyled">
             <%= link_to new_user_registration_path do %>
               <i class="fa-solid fa-user-plus"></i>Sign up
             <% end %>
           </li>
-          <li>
+          <li class="list-unstyled">
             <%= link_to new_user_session_path do %>
               <i class="fa-solid fa-right-from-bracket"></i>Log in
             <% end %>
@@ -62,7 +67,7 @@
         </ul>
       <% end %>
     </header>
-    
+
     <%= flash[:notice] %>
 
     <%= yield %>

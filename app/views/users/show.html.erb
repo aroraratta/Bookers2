@@ -1,0 +1,26 @@
+<%= render partial: 'users/userinfo', locals: { user: @user, book: Book.new } %>
+
+    <div class="col-md-8 offset-md-1">
+      <h2>Books</h2>
+      
+      <table class="table">
+        <tr>
+          <th></th>
+          <th>Title</th>
+          <th>Opinion</th>
+        </tr>
+        <% @book.each do |book| %>
+          <tr>
+            <td>
+              <%= link_to user_path(@user.id) do %>
+                <%= image_tag @user.get_profile_image(100, 100) %>
+              <% end %>
+            </td>
+            <td><%= link_to book.title, book_path(book.id) %></td>
+            <td><%= book.body %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
